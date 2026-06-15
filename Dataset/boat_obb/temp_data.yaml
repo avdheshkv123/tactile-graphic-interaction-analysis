@@ -1,0 +1,10 @@
+names:
+  0: boat
+  1: bottom_left
+  2: bottom_right
+  3: top_left
+  4: top_right
+path: C:/Users/student/Downloads/IP-Dataset/boat_obb
+test: test/images
+train: train/images
+val: valid/images

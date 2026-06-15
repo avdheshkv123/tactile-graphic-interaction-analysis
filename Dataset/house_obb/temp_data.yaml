@@ -1,0 +1,10 @@
+names:
+  0: bottom_left
+  1: bottom_right
+  2: house
+  3: top_left
+  4: top_right
+path: C:/Users/student/Downloads/IP-Dataset/house_obb
+test: test/images
+train: train/images
+val: valid/images
