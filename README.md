@@ -1,46 +1,196 @@
-# Tactile Graphic Interaction Analysis System
+# Finger Pattern Analysis System
 
-A computer vision-based application for analysing tactile graphic interaction patterns from videos using YOLOv8 OBB detection, MediaPipe finger tracking, spatial-temporal modelling, and graph-based behavioural analysis.
+A desktop application for analyzing finger exploration patterns on tactile graphics. The application provides an end-to-end pipeline for model training, salient region annotation, video analysis, and visualization of exploration patterns.
+
+---
 
 ## Features
 
-* Upload custom datasets using `data.yaml`
-* Train YOLOv8 object detection models directly through the GUI
-* Perform inference on images and videos
-* Detect objects using Oriented Bounding Boxes (OBB)
-* Apply perspective transformation and image warping
-* Track fingertip movements using MediaPipe Hand Landmarks
-* Define salient interaction regions (A, B, C, D, E)
-* Generate cumulative finger trajectory visualisations
-* Extract region visit sequences and transition patterns
-* Create interaction frequency graphs and movement direction plots
-* Export analysis results and structured JSON outputs
+- Train YOLO models for tactile graphics
+- Mark salient regions on tactile graphics
+- Analyze participant video folders
+- Generate cumulative analysis results
+- Visualize exploration trajectories and analytical outputs
+- Interactive desktop interface built with PySide6
 
-## Workflow
+---
 
-Dataset Upload → Model Training → Object Detection → Perspective Warp → Finger Tracking → Region Mapping → Sequence Extraction → Graph Analysis
+## Prerequisites
 
-## Technologies Used
+Before running the application, ensure the following are installed:
 
-* Python
-* YOLOv8
-* MediaPipe
-* OpenCV
-* NumPy
-* Pandas
-* Matplotlib
-* PyQt/Tkinter
-* Google Colab
-* Kaggle
-* Roboflow
+- Python **3.10** or **3.11** *(Python 3.9 is also supported)*
+- **pip** (comes with Python)
+- Windows, macOS, or Linux
 
-## Applications
+---
 
-* Tactile graphic interaction analysis
-* Human behaviour and interaction studies
-* Spatial-temporal movement analysis
-* Computer vision research
-* Educational and accessibility research
+## Installation
+
+### 1. Clone the Repository
+
+```bash
+git clone <repository-url>
+cd Finger_Exploration_APP
+```
+
+Or download the repository as a ZIP file and extract it.
+
+---
+
+### 2. Install Dependencies
+
+#### Windows
+
+Upgrade pip
+
+```bash
+python -m pip install --upgrade pip
+```
+
+Install required packages
+
+```bash
+python -m pip install -r application\requirements.txt
+```
+
+If required, install the following packages manually:
+
+```bash
+python -m pip install mediapipe ultralytics opencv-python torch torchvision torchaudio PySide6
+```
+
+---
+
+#### macOS / Linux
+
+Upgrade pip
+
+```bash
+python3 -m pip install --upgrade pip
+```
+
+Install required packages
+
+```bash
+python3 -m pip install -r application/requirements.txt
+```
+
+If required, install the following packages manually:
+
+```bash
+python3 -m pip install mediapipe ultralytics opencv-python torch torchvision torchaudio PySide6
+```
+
+---
+
+## Running the Application
+
+### Windows
+
+```bash
+python application\app.py
+```
+
+### macOS / Linux
+
+```bash
+python3 application/app.py
+```
+
+---
+
+## Project Workflow
+
+The application follows a **4-step pipeline**:
+
+### 1. Train YOLO Model
+
+- Load the corresponding `data.yaml`
+- Fine-tune the YOLO model
+- Generate the trained `best.pt` model
+
+### 2. Mark Salient Regions
+
+- Load the tactile graphic
+- Annotate salient regions
+- Export annotations as `regions.json`
+
+### 3. Analyze Video Folder
+
+- Load:
+  - Trained model (`best.pt`)
+  - `regions.json`
+  - Participant video folder
+- Run cumulative analysis
+
+### 4. Results
+
+- Load generated results
+- View trajectory plots
+- Visualize analytical outputs
+- Load summary JSON files
+
+---
+
+## Project Structure
+
+```text
+Finger_Exploration_APP/
+│
+├── application/
+│   ├── app.py
+│   ├── requirements.txt
+│   ├── assets/
+│   │   └── hand_landmarker.task
+│   └── ...
+│
+├── README.md
+└── ...
+```
+
+---
+
+## Notes
+
+- Ensure the file
+
+```text
+application/assets/hand_landmarker.task
+```
+
+is present before running the application.
+
+If you encounter a `ModuleNotFoundError`, install the missing package:
+
+**Windows**
+
+```bash
+python -m pip install <package_name>
+```
+
+**macOS / Linux**
+
+```bash
+python3 -m pip install <package_name>
+```
+
+---
+
+## Tech Stack
+
+- Python
+- PySide6
+- OpenCV
+- MediaPipe
+- Ultralytics YOLO
+- PyTorch
+
+---
+
+## License
+
+This project is intended for academic and research purposes.
 
 ## Current Capabilities
 
