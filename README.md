@@ -186,12 +186,6 @@ python3 -m pip install <package_name>
 - Ultralytics YOLO
 - PyTorch
 
----
-
-## License
-
-This project is intended for academic and research purposes.
-
 ## Current Capabilities
 
 The system provides an end-to-end pipeline that detects objects, performs orientation correction, tracks finger movement, maps interactions to predefined regions, extracts behavioural sequences, and generates graph-based analytical visualisations from video data.
@@ -200,6 +194,12 @@ The system provides an end-to-end pipeline that detects objects, performs orient
 <img width="1918" height="1078" alt="Screenshot 2026-06-15 222421" src="https://github.com/user-attachments/assets/d1226285-4b69-40e4-95e5-a6ecb73489c0" />
 <img width="1918" height="1078" alt="Screenshot 2026-06-15 222429" src="https://github.com/user-attachments/assets/2ac0d410-5f17-495e-9cc9-96a2486d7d5d" />
 <img width="1918" height="1078" alt="Screenshot 2026-06-15 222436" src="https://github.com/user-attachments/assets/afe80bb0-200d-4554-b9e2-6fcc6a22cfdb" />
+
+---
+
+## License
+
+This project is intended for academic and research purposes.
 
 
 
